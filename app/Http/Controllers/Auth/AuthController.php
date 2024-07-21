@@ -37,8 +37,8 @@ class AuthController extends Controller
 
   public function logout()
   {
-      Auth::user()->tokens()->delete();
-      return response()->json([], Response::HTTP_NO_CONTENT);
+    Auth::user()->tokens()->delete();
+    return response()->json([], Response::HTTP_NO_CONTENT);
   }
 
 /*   public function register(RegisterApiRequest $req)

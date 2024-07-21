@@ -18,6 +18,14 @@ class Post extends Model
         'user_id',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'created_at' => 'datetime:d/m/Y',
+            'updated' => 'datetime:d/m/Y',
+        ];
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class)->select('id', 'name', 'email');
